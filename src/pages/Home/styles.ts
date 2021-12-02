@@ -1,3 +1,12 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #ededed;
+`;
