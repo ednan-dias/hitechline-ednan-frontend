@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
@@ -8,9 +8,7 @@ import { ModalRegister } from "../ModalRegister";
 import { Container, Content } from "./styles";
 
 export function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const { drinks } = useDrink();
+  const { drinks, OpenModal } = useDrink();
 
   useEffect(() => {
     console.log(drinks);
@@ -19,14 +17,11 @@ export function Home() {
   return (
     <>
       <Container>
-        <Header />
+        <Header title="Listagem de Bebidas" />
         <Content>
-          <Button
-            title="Cadastrar nova Bebida"
-            onPress={() => setIsVisible(true)}
-          />
+          <Button title="Cadastrar nova Bebida" onPress={OpenModal} />
         </Content>
-        <ModalRegister isVisible={isVisible} />
+        <ModalRegister />
       </Container>
     </>
   );

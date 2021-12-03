@@ -1,11 +1,6 @@
 import styled from "@emotion/styled";
-import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps extends ButtonHTMLAttributes<ButtonProps> {
-  color: string;
-}
-
-export const ButtonStyle = styled.button<ButtonProps>`
+export const ButtonStyle = styled.button`
   width: auto;
   height: 50px;
   background-color: ${({ color }) => color};

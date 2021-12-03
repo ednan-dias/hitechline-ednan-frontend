@@ -1,9 +1,13 @@
 import { Container, Title } from "./styles";
 
-export function Header() {
+interface Props {
+  title: string;
+}
+
+export function Header({ title }: Props) {
   return (
     <Container>
-      <Title>Listagem de Bebidas</Title>
+      <Title>{title}</Title>
     </Container>
   );
 }
