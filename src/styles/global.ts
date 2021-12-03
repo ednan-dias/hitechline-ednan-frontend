@@ -3,7 +3,7 @@ import { Global, css } from "@emotion/react";
 
 export const GlobalStyle = styled(Global)``;
 
-export const styles = css`
+export const stylesGlobal = css`
   * {
     margin: 0;
     padding: 0;

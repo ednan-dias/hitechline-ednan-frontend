@@ -1,6 +1,43 @@
 import styled from "@emotion/styled";
 import { Styles } from "react-modal";
 
+export const Header = styled.header`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  background-color: #08945b;
+  padding: 5px;
+  position: relative;
+`;
+
+export const Title = styled.h1`
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+`;
+
+export const CloseButton = styled.button`
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  margin: 10px;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+
+  &:hover {
+    transform: scale(1.3);
+    transition: transform 0.7s;
+  }
+`;
+
 export const Form = styled.form`
   width: 100%;
   height: auto;

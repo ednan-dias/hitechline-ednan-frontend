@@ -1,12 +1,23 @@
 import { FormEvent, useState } from "react";
 import Modal from "react-modal";
-import { Header } from "../../components/Header";
 import Select from "react-select";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-import { Form, FormGroup, Label, Input, stylesModal } from "./styles";
 import { Button } from "../../components/Button";
 import { useDrink } from "../../hooks/drink";
 import { Drink } from "../../dtos/drink";
+import { generateColor } from "../../utils/generateColor";
+
+import {
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  stylesModal,
+  Header,
+  Title,
+  CloseButton,
+} from "./styles";
 
 export interface Option {
   value: string;
@@ -39,6 +50,7 @@ export function ModalRegister() {
     const data: Drink = {
       name,
       brand,
+      color: generateColor(),
     };
 
     addNewDrink(data);
@@ -54,13 +66,13 @@ export function ModalRegister() {
   }
 
   return (
-    <Modal
-      isOpen={isVisible}
-      style={stylesModal}
-      onRequestClose={CloseModal}
-      onAfterClose={clearInputs}
-    >
-      <Header title="Cadastrar Bebida" />
+    <Modal isOpen={isVisible} style={stylesModal} onAfterClose={clearInputs}>
+      <Header>
+        <Title>Cadastrar Bebida</Title>
+        <CloseButton onClick={CloseModal}>
+          <AiFillCloseCircle style={{ width: 25, height: 25 }} color="white" />
+        </CloseButton>
+      </Header>
 
       <Form onSubmit={handleConfirm}>
         <FormGroup>

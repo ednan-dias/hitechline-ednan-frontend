@@ -7,7 +7,7 @@ interface Props extends ButtonHTMLAttributes<Props> {
   onPress?: () => void;
 }
 
-export function Button({ title, color = "#842DEA", onPress }: Props) {
+export function Button({ title, color = "#08945B", onPress }: Props) {
   return (
     <ButtonStyle color={color} onClick={onPress}>
       <Title>{title}</Title>
